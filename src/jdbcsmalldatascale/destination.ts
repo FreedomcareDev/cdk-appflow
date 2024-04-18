@@ -11,7 +11,7 @@ import { ConnectorType } from '../core/connectors/connector-type';
 import { ErrorHandlingConfiguration } from '../core/error-handling';
 import { IFlow } from '../core/flows';
 import { IDestination } from '../core/vertices/destination';
-import { WriteOperation, WriteOperationType } from '../core/write-operation';
+import { WriteOperation } from '../core/write-operation';
 
 /**
  * The definition of the Amazon AppFlow object for JdbcSmallDestination
