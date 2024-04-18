@@ -11,7 +11,7 @@ import { ConnectorType } from '../core/connectors/connector-type';
 import { ErrorHandlingConfiguration } from '../core/error-handling';
 import { IFlow } from '../core/flows';
 import { IDestination } from '../core/vertices/destination';
-import { WriteOperation } from '../core/write-operation';
+import { WriteOperation, WriteOperationType } from '../core/write-operation';
 
 /**
  * The definition of the Amazon AppFlow object for JdbcSmallDestination
@@ -53,7 +53,7 @@ export interface JdbcSmallDataScaleDestinationProps {
    */
   readonly object: JdbcSmallDataScaleObject;
 
-  readonly operation: WriteOperation;
+  readonly operation?: WriteOperation;
 }
 
 /**
@@ -94,8 +94,8 @@ export class JdbcSmallDataScaleDestination implements IDestination {
           bucketPrefix: this.props.errorHandling?.errorLocation?.prefix,
           failOnFirstError: this.props.errorHandling.failOnFirstError,
         },
-        idFieldNames: this.props.operation.ids,
-        writeOperationType: this.props.operation.type,
+        idFieldNames: this.props.operation?.ids,
+        writeOperationType: this.props.operation?.type || WriteOperationType.INSERT,
       },
     };
   }
