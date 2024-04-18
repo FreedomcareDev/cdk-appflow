@@ -8497,7 +8497,93 @@ The database communication port.
 
 ---
 
+### JdbcSmallDataScaleDestinationProps <a name="JdbcSmallDataScaleDestinationProps" id="@cdklabs/cdk-appflow.JdbcSmallDataScaleDestinationProps"></a>
+
+Properties of the JdbcSmallDataScaleDestination.
+
+#### Initializer <a name="Initializer" id="@cdklabs/cdk-appflow.JdbcSmallDataScaleDestinationProps.Initializer"></a>
+
+```typescript
+import { JdbcSmallDataScaleDestinationProps } from '@cdklabs/cdk-appflow'
+
+const jdbcSmallDataScaleDestinationProps: JdbcSmallDataScaleDestinationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleDestinationProps.property.object">object</a></code> | <code><a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleObject">JdbcSmallDataScaleObject</a></code> | The destination object table to write to. |
+| <code><a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleDestinationProps.property.operation">operation</a></code> | <code><a href="#@cdklabs/cdk-appflow.WriteOperation">WriteOperation</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleDestinationProps.property.profile">profile</a></code> | <code><a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleConnectorProfile">JdbcSmallDataScaleConnectorProfile</a></code> | The profile to use with the destination. |
+| <code><a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleDestinationProps.property.apiVersion">apiVersion</a></code> | <code>string</code> | The Amazon AppFlow Api Version. |
+| <code><a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleDestinationProps.property.errorHandling">errorHandling</a></code> | <code><a href="#@cdklabs/cdk-appflow.ErrorHandlingConfiguration">ErrorHandlingConfiguration</a></code> | The settings that determine how Amazon AppFlow handles an error when placing data in the destination. |
+
+---
+
+##### `object`<sup>Required</sup> <a name="object" id="@cdklabs/cdk-appflow.JdbcSmallDataScaleDestinationProps.property.object"></a>
+
+```typescript
+public readonly object: JdbcSmallDataScaleObject;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleObject">JdbcSmallDataScaleObject</a>
+
+The destination object table to write to.
+
+---
+
+##### `operation`<sup>Required</sup> <a name="operation" id="@cdklabs/cdk-appflow.JdbcSmallDataScaleDestinationProps.property.operation"></a>
+
+```typescript
+public readonly operation: WriteOperation;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-appflow.WriteOperation">WriteOperation</a>
+
+---
+
+##### `profile`<sup>Required</sup> <a name="profile" id="@cdklabs/cdk-appflow.JdbcSmallDataScaleDestinationProps.property.profile"></a>
+
+```typescript
+public readonly profile: JdbcSmallDataScaleConnectorProfile;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleConnectorProfile">JdbcSmallDataScaleConnectorProfile</a>
+
+The profile to use with the destination.
+
+---
+
+##### `apiVersion`<sup>Optional</sup> <a name="apiVersion" id="@cdklabs/cdk-appflow.JdbcSmallDataScaleDestinationProps.property.apiVersion"></a>
+
+```typescript
+public readonly apiVersion: string;
+```
+
+- *Type:* string
+
+The Amazon AppFlow Api Version.
+
+---
+
+##### `errorHandling`<sup>Optional</sup> <a name="errorHandling" id="@cdklabs/cdk-appflow.JdbcSmallDataScaleDestinationProps.property.errorHandling"></a>
+
+```typescript
+public readonly errorHandling: ErrorHandlingConfiguration;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-appflow.ErrorHandlingConfiguration">ErrorHandlingConfiguration</a>
+
+The settings that determine how Amazon AppFlow handles an error when placing data in the destination.
+
+For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure.
+
+---
+
 ### JdbcSmallDataScaleObject <a name="JdbcSmallDataScaleObject" id="@cdklabs/cdk-appflow.JdbcSmallDataScaleObject"></a>
+
+The definition of the Amazon AppFlow object for JdbcSmallDestination.
 
 #### Initializer <a name="Initializer" id="@cdklabs/cdk-appflow.JdbcSmallDataScaleObject.Initializer"></a>
 
@@ -8511,8 +8597,8 @@ const jdbcSmallDataScaleObject: JdbcSmallDataScaleObject = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleObject.property.schema">schema</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleObject.property.table">table</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleObject.property.schema">schema</a></code> | <code>string</code> | Database schema name of the table. |
+| <code><a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleObject.property.table">table</a></code> | <code>string</code> | Database table name. |
 
 ---
 
@@ -8524,6 +8610,8 @@ public readonly schema: string;
 
 - *Type:* string
 
+Database schema name of the table.
+
 ---
 
 ##### `table`<sup>Required</sup> <a name="table" id="@cdklabs/cdk-appflow.JdbcSmallDataScaleObject.property.table"></a>
@@ -8533,6 +8621,8 @@ public readonly table: string;
 ```
 
 - *Type:* string
+
+Database table name.
 
 ---
 
@@ -13861,6 +13951,76 @@ The AppFlow type of the connector that this source is implemented for.
 ---
 
 
+### JdbcSmallDataScaleDestination <a name="JdbcSmallDataScaleDestination" id="@cdklabs/cdk-appflow.JdbcSmallDataScaleDestination"></a>
+
+- *Implements:* <a href="#@cdklabs/cdk-appflow.IDestination">IDestination</a>
+
+Represents a destination for the JDBC connector.
+
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-appflow.JdbcSmallDataScaleDestination.Initializer"></a>
+
+```typescript
+import { JdbcSmallDataScaleDestination } from '@cdklabs/cdk-appflow'
+
+new JdbcSmallDataScaleDestination(props: JdbcSmallDataScaleDestinationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleDestination.Initializer.parameter.props">props</a></code> | <code><a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleDestinationProps">JdbcSmallDataScaleDestinationProps</a></code> | - properties of the destination. |
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="@cdklabs/cdk-appflow.JdbcSmallDataScaleDestination.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleDestinationProps">JdbcSmallDataScaleDestinationProps</a>
+
+properties of the destination.
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleDestination.bind">bind</a></code> | *No description.* |
+
+---
+
+##### `bind` <a name="bind" id="@cdklabs/cdk-appflow.JdbcSmallDataScaleDestination.bind"></a>
+
+```typescript
+public bind(flow: IFlow): DestinationFlowConfigProperty
+```
+
+###### `flow`<sup>Required</sup> <a name="flow" id="@cdklabs/cdk-appflow.JdbcSmallDataScaleDestination.bind.parameter.flow"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-appflow.IFlow">IFlow</a>
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleDestination.property.connectorType">connectorType</a></code> | <code><a href="#@cdklabs/cdk-appflow.ConnectorType">ConnectorType</a></code> | The AppFlow type of the connector that this source is implemented for. |
+
+---
+
+##### `connectorType`<sup>Required</sup> <a name="connectorType" id="@cdklabs/cdk-appflow.JdbcSmallDataScaleDestination.property.connectorType"></a>
+
+```typescript
+public readonly connectorType: ConnectorType;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-appflow.ConnectorType">ConnectorType</a>
+
+The AppFlow type of the connector that this source is implemented for.
+
+---
+
+
 ### JdbcSmallDataScaleSource <a name="JdbcSmallDataScaleSource" id="@cdklabs/cdk-appflow.JdbcSmallDataScaleSource"></a>
 
 - *Implements:* <a href="#@cdklabs/cdk-appflow.ISource">ISource</a>
@@ -16429,7 +16589,7 @@ public readonly credentials: ISecret;
 
 - *Extends:* <a href="#@cdklabs/cdk-appflow.IVertex">IVertex</a>
 
-- *Implemented By:* <a href="#@cdklabs/cdk-appflow.AmazonRdsForPostgreSqlDestination">AmazonRdsForPostgreSqlDestination</a>, <a href="#@cdklabs/cdk-appflow.EventBridgeDestination">EventBridgeDestination</a>, <a href="#@cdklabs/cdk-appflow.RedshiftDestination">RedshiftDestination</a>, <a href="#@cdklabs/cdk-appflow.S3Destination">S3Destination</a>, <a href="#@cdklabs/cdk-appflow.SAPOdataDestination">SAPOdataDestination</a>, <a href="#@cdklabs/cdk-appflow.SalesforceDestination">SalesforceDestination</a>, <a href="#@cdklabs/cdk-appflow.SnowflakeDestination">SnowflakeDestination</a>, <a href="#@cdklabs/cdk-appflow.IDestination">IDestination</a>
+- *Implemented By:* <a href="#@cdklabs/cdk-appflow.AmazonRdsForPostgreSqlDestination">AmazonRdsForPostgreSqlDestination</a>, <a href="#@cdklabs/cdk-appflow.EventBridgeDestination">EventBridgeDestination</a>, <a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleDestination">JdbcSmallDataScaleDestination</a>, <a href="#@cdklabs/cdk-appflow.RedshiftDestination">RedshiftDestination</a>, <a href="#@cdklabs/cdk-appflow.S3Destination">S3Destination</a>, <a href="#@cdklabs/cdk-appflow.SAPOdataDestination">SAPOdataDestination</a>, <a href="#@cdklabs/cdk-appflow.SalesforceDestination">SalesforceDestination</a>, <a href="#@cdklabs/cdk-appflow.SnowflakeDestination">SnowflakeDestination</a>, <a href="#@cdklabs/cdk-appflow.IDestination">IDestination</a>
 
 A destination of an AppFlow flow.
 
@@ -16847,7 +17007,7 @@ A representation of a validation operation, that is an operation testing records
 
 ### IVertex <a name="IVertex" id="@cdklabs/cdk-appflow.IVertex"></a>
 
-- *Implemented By:* <a href="#@cdklabs/cdk-appflow.AmazonRdsForPostgreSqlDestination">AmazonRdsForPostgreSqlDestination</a>, <a href="#@cdklabs/cdk-appflow.EventBridgeDestination">EventBridgeDestination</a>, <a href="#@cdklabs/cdk-appflow.GoogleAnalytics4Source">GoogleAnalytics4Source</a>, <a href="#@cdklabs/cdk-appflow.GoogleBigQuerySource">GoogleBigQuerySource</a>, <a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleSource">JdbcSmallDataScaleSource</a>, <a href="#@cdklabs/cdk-appflow.MailchimpSource">MailchimpSource</a>, <a href="#@cdklabs/cdk-appflow.MarketoSource">MarketoSource</a>, <a href="#@cdklabs/cdk-appflow.MicrosoftDynamics365Source">MicrosoftDynamics365Source</a>, <a href="#@cdklabs/cdk-appflow.MicrosoftSharepointOnlineSource">MicrosoftSharepointOnlineSource</a>, <a href="#@cdklabs/cdk-appflow.RedshiftDestination">RedshiftDestination</a>, <a href="#@cdklabs/cdk-appflow.S3Destination">S3Destination</a>, <a href="#@cdklabs/cdk-appflow.S3Source">S3Source</a>, <a href="#@cdklabs/cdk-appflow.SAPOdataDestination">SAPOdataDestination</a>, <a href="#@cdklabs/cdk-appflow.SAPOdataSource">SAPOdataSource</a>, <a href="#@cdklabs/cdk-appflow.SalesforceDestination">SalesforceDestination</a>, <a href="#@cdklabs/cdk-appflow.SalesforceMarketingCloudSource">SalesforceMarketingCloudSource</a>, <a href="#@cdklabs/cdk-appflow.SalesforceSource">SalesforceSource</a>, <a href="#@cdklabs/cdk-appflow.ServiceNowSource">ServiceNowSource</a>, <a href="#@cdklabs/cdk-appflow.SlackSource">SlackSource</a>, <a href="#@cdklabs/cdk-appflow.SnowflakeDestination">SnowflakeDestination</a>, <a href="#@cdklabs/cdk-appflow.ZendeskSource">ZendeskSource</a>, <a href="#@cdklabs/cdk-appflow.IDestination">IDestination</a>, <a href="#@cdklabs/cdk-appflow.ISource">ISource</a>, <a href="#@cdklabs/cdk-appflow.IVertex">IVertex</a>
+- *Implemented By:* <a href="#@cdklabs/cdk-appflow.AmazonRdsForPostgreSqlDestination">AmazonRdsForPostgreSqlDestination</a>, <a href="#@cdklabs/cdk-appflow.EventBridgeDestination">EventBridgeDestination</a>, <a href="#@cdklabs/cdk-appflow.GoogleAnalytics4Source">GoogleAnalytics4Source</a>, <a href="#@cdklabs/cdk-appflow.GoogleBigQuerySource">GoogleBigQuerySource</a>, <a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleDestination">JdbcSmallDataScaleDestination</a>, <a href="#@cdklabs/cdk-appflow.JdbcSmallDataScaleSource">JdbcSmallDataScaleSource</a>, <a href="#@cdklabs/cdk-appflow.MailchimpSource">MailchimpSource</a>, <a href="#@cdklabs/cdk-appflow.MarketoSource">MarketoSource</a>, <a href="#@cdklabs/cdk-appflow.MicrosoftDynamics365Source">MicrosoftDynamics365Source</a>, <a href="#@cdklabs/cdk-appflow.MicrosoftSharepointOnlineSource">MicrosoftSharepointOnlineSource</a>, <a href="#@cdklabs/cdk-appflow.RedshiftDestination">RedshiftDestination</a>, <a href="#@cdklabs/cdk-appflow.S3Destination">S3Destination</a>, <a href="#@cdklabs/cdk-appflow.S3Source">S3Source</a>, <a href="#@cdklabs/cdk-appflow.SAPOdataDestination">SAPOdataDestination</a>, <a href="#@cdklabs/cdk-appflow.SAPOdataSource">SAPOdataSource</a>, <a href="#@cdklabs/cdk-appflow.SalesforceDestination">SalesforceDestination</a>, <a href="#@cdklabs/cdk-appflow.SalesforceMarketingCloudSource">SalesforceMarketingCloudSource</a>, <a href="#@cdklabs/cdk-appflow.SalesforceSource">SalesforceSource</a>, <a href="#@cdklabs/cdk-appflow.ServiceNowSource">ServiceNowSource</a>, <a href="#@cdklabs/cdk-appflow.SlackSource">SlackSource</a>, <a href="#@cdklabs/cdk-appflow.SnowflakeDestination">SnowflakeDestination</a>, <a href="#@cdklabs/cdk-appflow.ZendeskSource">ZendeskSource</a>, <a href="#@cdklabs/cdk-appflow.IDestination">IDestination</a>, <a href="#@cdklabs/cdk-appflow.ISource">ISource</a>, <a href="#@cdklabs/cdk-appflow.IVertex">IVertex</a>
 
 An interface representing a vertex, i.e. a source or a destination of an AppFlow flow.
 

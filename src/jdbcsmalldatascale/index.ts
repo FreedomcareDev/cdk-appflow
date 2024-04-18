@@ -6,4 +6,4 @@ export * from './type';
 export * from './driver';
 export * from './profile';
 export * from './source';
-export { JdbcSmallDataScaleDestination, JdbcSmallDataScaleDestinationProps, JdbcSmallDataScaleObject } from './destination'
+export { JdbcSmallDataScaleDestination, JdbcSmallDataScaleDestinationProps, JdbcSmallDataScaleObject } from './destination';
